@@ -66,15 +66,16 @@ BDIX AI یک وب‌سایت چندزبانه با Frontend و Backend مبتن�
     positioning، negative space و فاصله‌گذاری هم‌سطح Services به composition
     خدمات نزدیک شده‌اند؛ خطوط تزئینی، border، background و hover chrome از
     plain content این سه بخش حذف شده است.
--   Primary Visual در Brand Universe، Work، Process و About با filter، glow،
-    network، core و nodeهای روشن‌تر به‌صورت section-specific خواناتر شده
-    است؛ Visual جدید یا Canvas موازی ساخته نشده است.
--   یک luminous baseline مشترک برای Primary Visual در کل story فعال است؛
-    Hero، Brand Universe، Work، Process، About، cinema/final و Footer دیگر
-    به حالت کم‌خوانا یا ناپدیدشوندهٔ ناگهانی نمی‌روند.
--   همان interpolation و anchorهای موجود در `hero-visual.js` حرکت visual را
-    بین بخش‌ها پیوسته نگه می‌دارند؛ فقط opacity مقصدهای غیر Services برای
-    continuity بهتر تنظیم شده و state اختصاصی Services تغییر نکرده است.
+-   Primary Visual در Hero، Brand Universe، Work، Process، About،
+    cinema/final و Footer اکنون baseline روشن مشترک برای Canvas network،
+    curved connections، packet، glow، core، orbit و node دارد؛ Visual جدید
+    یا Canvas موازی ساخته نشده است.
+-   baseline Canvas در `hero-visual.js` با illumination CSS در
+    `hero-banner.css` و `portfolio-arc.css` هماهنگ شده است. Services همچنان
+    transformation، formation، burst و orbit state اختصاصی خود را حفظ می‌کند.
+-   opacity و scale anchorهای Brand Universe، cinema/final و Footer برای
+    خوانایی بهتر تقویت شده‌اند؛ interpolation موجود حرکت visual را بین
+    بخش‌ها پیوسته نگه می‌دارد.
 -   در Work، Process و About، hover/active/focus غیرضروری روی articleها دیگر
     رنگ، text-shadow، border، background یا box-shadow ایجاد نمی‌کند؛ focus
     کنترل‌های واقعی و لینک‌ها همچنان توسط styleهای عمومی خودشان حفظ می‌شود.
@@ -186,23 +187,18 @@ Services مهم‌ترین مرجع فعلی زبان بصری پروژه است
     دوباره fixed شوند.
 -   Visual باید عنصر اصلی توجه باقی بماند.
 
-### Services Core Message
+### Core Word و Services Message
 
-فقط در Services، Core می‌تواند از نشان معمول `BDIX AI` به واژهٔ:
+واژهٔ داخل Core در همان Visual واحد و بر اساس زبان فعال صفحه تنظیم می‌شود:
 
-``` text
-GROWTH
-```
+-   عربی: `النمو`
+-   فارسی: `رشد`
+-   انگلیسی: `GROWTH`
 
-تغییر کند.
-
-این تغییر:
-
--   داخل همان Core انجام می‌شود.
--   Overlay مستقل نیست.
--   با transition واقعی انجام می‌شود.
--   در خروج از Services برگشت‌پذیر است.
--   برای بخش‌های دیگر هنوز Marketing Word عمومی تعریف نشده است.
+این مقدار با تغییر `document.documentElement.lang` به‌روزرسانی می‌شود و
+Visual یا Core دوم ساخته نمی‌شود. در Services، همان واژه با کلاس
+`is-marketing-word` و transition موجود برجسته‌تر می‌شود؛ در خروج از Services
+به وضعیت عادی Core برمی‌گردد.
 
 ------------------------------------------------------------------------
 
@@ -243,7 +239,7 @@ SETTLE
 -   حرکت‌های پیچیده و Burst/Morph پویا باید خاموش یا ثابت شوند.
 -   معنا و خوانایی محتوا نباید به انیمیشن وابسته باشد.
 -   Core و محتوای مهم همچنان قابل مشاهده باشند.
--   GROWTH در Services باید قابل مشاهده باقی بماند.
+-   واژهٔ Core متناسب با زبان فعال باید قابل مشاهده باقی بماند.
 
 ------------------------------------------------------------------------
 
@@ -503,16 +499,17 @@ Premium Typography
 Services در حال حاضر **مرجع زبان بصری و تعاملی** برای توسعهٔ بخش‌های بعدی
 است.
 
-این زبان به Brand Universe، Work، Process و About گسترش یافته و شدت نور
-و خوانایی Primary Visual آن‌ها نیز به‌صورت کنترل‌شده افزایش یافته است.
-نور پایه و continuity حرکت visual اکنون در کل story از Hero تا Footer
-حفظ می‌شود، در حالی که transformation اختصاصی Services باقی مانده است.
+این زبان به Brand Universe، Work، Process، About، cinema/final و Footer
+گسترش یافته و baseline روشن Canvas/CSS آن‌ها با Services هماهنگ شده است.
+opacity و scale مقصدهای کم‌خوانا نیز تقویت شده‌اند، در حالی که transformation
+اختصاصی Services، حرکت اسکرولی، pointer interaction و reduced-motion حفظ شده‌اند.
 
 ### نقطهٔ ادامه
 
 کار بعدی می‌تواند از بررسی بصری cross-browser و بهینه‌سازی جزئی responsive
 در صورت مشاهدهٔ مشکل واقعی ادامه پیدا کند؛ تست دستگاه فیزیکی و مرورگرهای
-غیر Chromium هنوز انجام نشده است.
+غیر Chromium هنوز انجام نشده است. آخرین validation محلی در Chromium شامل
+desktop، mobile، section transitions و hover cleanup بدون console error بود.
 
 اما توسعه نباید صرفاً با کپی کردن Layout Services انجام شود.
 

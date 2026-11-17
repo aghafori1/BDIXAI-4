@@ -2,6 +2,7 @@
   'use strict';
   const root = document.querySelector('.hb-visual');
   if (!root) return;
+  document.querySelector('.hb-words')?.remove();
   const canvas = root.querySelector('.hb-network');
   const ctx = canvas?.getContext('2d');
   if (!ctx) return;
@@ -95,7 +96,7 @@
       pointer.y+=(pointer.targetY-pointer.y)*.22;
       pointer.strength+=(pointer.targetStrength-pointer.strength)*.22;
     }
-    const networkScale=(1+identityProgress*.13-servicesProgress*.045)*servicesNetworkScale*(1-compressionPulse*.035+expansionPulse*.028+scrollEnergy*.004);
+    const networkScale=(1+identityProgress*.13)*servicesNetworkScale*(1-compressionPulse*.035+expansionPulse*.028+scrollEnergy*.004);
     const coords=points.map(([x,y],i)=>{
       const [targetX,targetY]=serviceFormationPoints[i];
       const formedX=mix(x,targetX,servicesLayoutProgress),formedY=mix(y,targetY,servicesLayoutProgress);
@@ -103,7 +104,7 @@
     });
     // soft radial field behind the connected network
     const glow=ctx.createRadialGradient(cx,cy,scale*.04,cx,cy,scale*.49);
-    glow.addColorStop(0,`rgba(40,123,255,${(.15+identityProgress*.06+servicesProgress*.045+servicesBurst*.13+motionEnergy*.045).toFixed(3)})`);glow.addColorStop(.55,`rgba(85,226,212,${(.055+identityProgress*.02+servicesProgress*.018+servicesBurst*.045+motionEnergy*.025).toFixed(3)})`);glow.addColorStop(1,'rgba(6,11,20,0)');
+    glow.addColorStop(0,`rgba(40,123,255,${(.195+identityProgress*.06+servicesBurst*.13+motionEnergy*.045).toFixed(3)})`);glow.addColorStop(.55,`rgba(85,226,212,${(.073+identityProgress*.02+servicesBurst*.045+motionEnergy*.025).toFixed(3)})`);glow.addColorStop(1,'rgba(6,11,20,0)');
     ctx.fillStyle=glow;ctx.fillRect(0,0,width,height);
     if(visualBurst>.035){
       const waveProgress=Math.max(servicesWaveProgress,clamp01(transitionAge/720));
@@ -135,9 +136,9 @@
       }
       ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.quadraticCurveTo(controlX,controlY,q.x,q.y);
       const featured=i%4===0;
-      const opacity=(featured?.29:.18)+identityProgress*(featured?.12:.07)+servicesProgress*(featured?.10:.06)+servicesBurst*(featured?.11:.065)+motionEnergy*(featured?.035:.022);
+      const opacity=(featured?.39:.24)+identityProgress*(featured?.12:.07)+servicesBurst*(featured?.11:.065)+motionEnergy*(featured?.035:.022);
       ctx.strokeStyle=featured?`rgba(85,226,212,${opacity.toFixed(3)})`:`rgba(105,183,255,${opacity.toFixed(3)})`;
-      ctx.lineWidth=(featured?1.35:.9)+identityProgress*(featured?.2:.12)+servicesProgress*(featured?.18:.12)+servicesBurst*(featured?.38:.24)+motionEnergy*(featured?.16:.1);
+      ctx.lineWidth=(featured?1.53:1.02)+identityProgress*(featured?.2:.12)+servicesBurst*(featured?.38:.24)+motionEnergy*(featured?.16:.1);
       ctx.lineCap='round';ctx.lineJoin='round';ctx.shadowBlur=scale*(featured?.009:.005);ctx.shadowColor=featured?'rgba(85,226,212,.62)':'rgba(105,183,255,.36)';ctx.stroke();ctx.shadowBlur=0;
       return {x:controlX,y:controlY};
     });
@@ -187,13 +188,14 @@
     fa:{strategy:'استراتژی',experience:'تجربه',intelligence:'هوش مصنوعی',execution:'اجرا',growth:'رشد',system:'یک سامانه یکپارچه رشد'},
     en:{strategy:'STRATEGY',experience:'EXPERIENCE',intelligence:'AI',execution:'EXECUTION',growth:'GROWTH',system:'ONE CONNECTED GROWTH SYSTEM'}
   };
+  const coreWords={ar:'النمو',fa:'رشد',en:'GROWTH'};
   const descriptions={ar:'منظومة BDIX AI المترابطة: الاستراتيجية والتجربة والذكاء الاصطناعي والتنفيذ والنمو',fa:'سامانه یکپارچه BDIX AI: استراتژی، تجربه، هوش مصنوعی، اجرا و رشد',en:'The connected BDIX AI system: strategy, experience, AI, execution and growth'};
   const storyCopy={
     ar:{strategy:'الاستراتيجية: فهم الأعمال وتحديد الاتجاه قبل اختيار التقنية',experience:'التجربة: نماذج وأعمال توضّح كيف تتحول الفكرة إلى تجربة رقمية',intelligence:'الذكاء: خدمات الويب والذكاء الاصطناعي التي تشكّل قدرات BDIX AI',execution:'التنفيذ: منهج واضح من التشخيص إلى البناء والتحسين',growth:'النمو: رؤية BDIX AI والنتيجة التي نبني المنظومة من أجلها'},
     fa:{strategy:'استراتژی: شناخت کسب‌وکار و تعیین مسیر پیش از انتخاب فناوری',experience:'تجربه: نمونه‌ها و پروژه‌ها نشان می‌دهند ایده چگونه به تجربه دیجیتال تبدیل می‌شود',intelligence:'هوشمندی: خدمات وب و هوش مصنوعی که توانمندی‌های BDIX AI را می‌سازند',execution:'اجرا: مسیری روشن از تشخیص تا ساخت و بهبود',growth:'رشد: چشم‌انداز BDIX AI و نتیجه‌ای که این سامانه برای آن ساخته می‌شود'},
     en:{strategy:'Strategy: understand the business and set direction before choosing technology',experience:'Experience: see how ideas become useful digital experiences',intelligence:'Intelligence: the web and AI capabilities that power BDIX AI',execution:'Execution: a clear path from diagnosis to building and improvement',growth:'Growth: the BDIX AI vision and the outcome the system is built to create'}
   };
-  const localize=()=>{const lang=(document.documentElement.lang||'ar').slice(0,2);const dict=labels[lang]||labels.en;root.querySelectorAll('[data-hb-label]').forEach(el=>{el.textContent=dict[el.dataset.hbLabel]||''});root.querySelectorAll('[data-story-key]').forEach(node=>{node.setAttribute('aria-label',dict[node.dataset.storyKey]||node.dataset.storyKey)});root.setAttribute('aria-label',descriptions[lang]||descriptions.en)};
+  const localize=()=>{const lang=(document.documentElement.lang||'ar').slice(0,2);const dict=labels[lang]||labels.en;root.querySelectorAll('[data-hb-label]').forEach(el=>{el.textContent=dict[el.dataset.hbLabel]||''});root.querySelectorAll('[data-story-key]').forEach(node=>{node.setAttribute('aria-label',dict[node.dataset.storyKey]||node.dataset.storyKey)});const word=root.querySelector('.hb-core-word');if(word){word.textContent=coreWords[lang]||coreWords.en;word.dir=lang==='en'?'ltr':'rtl'}root.setAttribute('aria-label',descriptions[lang]||descriptions.en)};
   new MutationObserver(()=>{localize();queueStoryRegion()}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});localize();
   const continuum=root.closest('.story-continuum');
   const visualLayer=root.closest('.shared-visual-column');
@@ -238,7 +240,8 @@
     if(active===servicesCoreActive)return;
     servicesCoreActive=active;
     core?.classList.toggle('is-marketing-word',active);
-    core?.setAttribute('aria-label',active?'GROWTH':'BDIX AI');
+    const lang=(document.documentElement.lang||'ar').slice(0,2);
+    core?.setAttribute('aria-label',active?(coreWords[lang]||coreWords.en):'BDIX AI');
   };
   const clearReducedMotionVisual=()=>{
     if(!continuum?.classList.contains('is-story-visual-static'))return;
@@ -269,8 +272,8 @@
   const homeStoryY=()=>compactStoryLayout()?initialVisualDocY-scrollY:Math.min(innerHeight*.78,Math.max(96,innerHeight*initialHomeYRatio));
   const setStoryVisualSize=()=>{
     const compact=compactStoryLayout();
-    const maxWidth=compact?Math.min(464,innerWidth*.94):Math.min(576,innerWidth*.42);
-    root.style.setProperty('--story-width',`${Math.min(initialVisualWidth,maxWidth)}px`);
+    const maxWidth=compact?Math.min(464,innerWidth*.94):Math.min(640,innerWidth*.46);
+    root.style.setProperty('--story-width',`${Math.min(Math.max(initialVisualWidth,640),maxWidth)}px`);
   };
   const enableStoryMotion=()=>{
     if(storyMotionReady||!continuum||!visualLayer||reduce.matches)return;
@@ -435,8 +438,8 @@
     const serviceAnchor=servicesVisualAnchor();
     const anchors=[
       {at:hero.end-vh*.12,x:homeX,y:homeY,scale:1,opacity:1},
-      {at:brand.start+vh*.20,x:oppositeX,y:brandY,scale:brandScale,opacity:brandOpacity},
-      {at:brand.end-vh*.08,x:oppositeX,y:brandY,scale:brandScale,opacity:brandOpacity}
+      {at:brand.start+vh*.20,x:oppositeX,y:brandY,scale:Math.max(brandScale,.62),opacity:Math.max(brandOpacity,.58)},
+      {at:brand.end-vh*.08,x:oppositeX,y:brandY,scale:Math.max(brandScale,.62),opacity:Math.max(brandOpacity,.58)}
     ];
     const sectionTargets=compact?{top:innerWidth*.5,services:alternateX,work:oppositeX,process:innerWidth*.5,about:alternateX,'cinema-final':innerWidth*.5}:{top:homeX,services:oppositeX,work:homeX,process:oppositeX,about:homeX,'cinema-final':innerWidth*.5};
     bounds.filter(item=>Object.hasOwn(sectionTargets,item.key)).forEach(item=>{
@@ -445,14 +448,14 @@
         at:item.center,
         x:item.key==='services'?serviceAnchor.x:sectionTargets[item.key],
         y:item.key==='services'?serviceAnchor.y:vh*(compact?(isFinal?.82:.88):(isFinal?.72:.86)),
-        scale:item.key==='services'?serviceAnchor.scale:compact?(isFinal?.48:.50):(isFinal?.48:.50),
-        opacity:item.key==='services'?1:isFinal?.70:1
+        scale:item.key==='services'?serviceAnchor.scale:compact?(isFinal?.54:.56):(isFinal?.54:.56),
+        opacity:item.key==='services'?1:isFinal?.82:1
       });
     });
     const footer=bounds.find(item=>item.key==='footer');
     if(footer){
-      anchors.push({at:footer.start+vh*.02,x:innerWidth*.5,y:vh*.76,scale:compact?.48:.44,opacity:.58});
-      anchors.push({at:footer.start+Math.min(footer.end-footer.start, vh*.14),x:innerWidth*.5,y:vh*.74,scale:compact?.42:.40,opacity:.42});
+      anchors.push({at:footer.start+vh*.02,x:innerWidth*.5,y:vh*.76,scale:compact?.52:.48,opacity:.72});
+      anchors.push({at:footer.start+Math.min(footer.end-footer.start, vh*.14),x:innerWidth*.5,y:vh*.74,scale:compact?.48:.44,opacity:.58});
     }
     return anchors.sort((a,b)=>a.at-b.at);
   };

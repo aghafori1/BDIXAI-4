@@ -89,7 +89,7 @@ html[dir="rtl"] .story-continuum{grid-template-areas:"hero visual" "brand visual
 .story-continuum #hero-banner .hb-layout{display:block;width:min(100%,44rem);margin-inline:auto}
 .story-continuum #hero-banner .hb-track{width:100%;max-width:100%}
 .shared-visual-column{grid-area:visual;position:relative;z-index:3;min-width:0;min-height:100%;display:flex;justify-content:center;align-items:stretch;pointer-events:none}
-.shared-visual-column>.hb-visual{position:sticky;top:clamp(4rem,calc(50svh - 17rem),10rem);align-self:flex-start;width:min(100%,36rem);max-width:36rem;aspect-ratio:1.08/1;margin-block-start:clamp(4rem,calc(50svh - 17rem),10rem);pointer-events:auto;flex:0 0 auto}
+.shared-visual-column>.hb-visual{position:sticky;top:clamp(5.5rem,calc(50svh - 15rem),11rem);align-self:flex-start;width:min(100%,39rem);max-width:39rem;aspect-ratio:1.08/1;margin-block-start:clamp(5.5rem,calc(50svh - 15rem),11rem);pointer-events:auto;flex:0 0 auto}
 .story-continuum .bu-orbit-tabs{pointer-events:none}
 .story-continuum[data-story-region="brand-universe"] .bu-orbit-tabs{pointer-events:auto}
 .story-continuum[data-story-region="brand-universe"] .bu-orbit-tab{background:rgba(6,11,20,.78);backdrop-filter:blur(8px)}
@@ -99,7 +99,7 @@ html[dir="rtl"] .story-continuum{grid-template-areas:"hero visual" "brand visual
  html[dir="rtl"] .story-continuum{grid-template-areas:"hero" "visual" "brand"}
  .story-continuum>#hero-banner{min-height:0;padding-inline:0}
  .shared-visual-column{grid-area:visual;min-height:0;padding:0 .75rem 1.25rem;align-items:center}
- .shared-visual-column>.hb-visual{position:relative;top:auto;width:min(100%,29rem);max-width:29rem;aspect-ratio:1.15/1;margin:0 auto}
+ .shared-visual-column>.hb-visual{position:relative;top:auto;width:min(100%,31rem);max-width:31rem;aspect-ratio:1.15/1;margin:0 auto}
  .story-continuum>#brand-universe{padding-inline:clamp(1rem,5vw,1.5rem);padding-block:2rem 4rem}
  .story-continuum #hero-banner .hb-layout{width:min(calc(100% - 2rem),34rem)}
 }
@@ -137,6 +137,7 @@ html[dir="rtl"] .story-continuum{grid-template-areas:"hero visual" "brand visual
 }
 
 /* Stage 5E — quiet idle life, responsive travel energy, and restrained type. */
+.hb-words{display:none!important}
 .hb-visual-glow{opacity:var(--hb-glow-opacity,.9);animation-duration:12s}
 .hb-orbit-one,.hb-orbit-two{scale:var(--hb-orbit-scale-x,1) var(--hb-orbit-scale-y,1);transition:scale 220ms ease-out}
 .hb-orbit-two{animation-duration:58s}
@@ -167,36 +168,36 @@ html[dir="rtl"] .hb-eyebrow,html[dir="rtl"] .hb-node,html[dir="rtl"] .hb-visual-
 
 /* Keep the single visual legible across the complete story, while Services retains its own state. */
 .story-continuum.is-story-visual-ready .hb-visual:not(.is-services-storytelling){
-  filter:brightness(1.12) contrast(1.1) saturate(1.12)
-    drop-shadow(0 0 1.35rem rgba(40,123,255,.24))
-    drop-shadow(0 0 2rem rgba(85,226,212,.14));
+  filter:brightness(1.16) contrast(1.14) saturate(1.22)
+    drop-shadow(0 0 1.25rem rgba(40,123,255,.24))
+    drop-shadow(0 0 2rem rgba(85,226,212,.16));
 }
 .story-continuum.is-story-visual-ready .hb-visual:not(.is-services-storytelling) .hb-visual-glow{
   opacity:.98!important;
   filter:blur(10px) brightness(1.22) saturate(1.18);
 }
 .story-continuum.is-story-visual-ready .hb-visual:not(.is-services-storytelling) .hb-network{
-  filter:brightness(1.28) contrast(1.14) saturate(1.16)
-    drop-shadow(0 0 .38rem rgba(85,226,212,.28));
+  filter:brightness(1.75) contrast(1.22) saturate(1.24)
+    drop-shadow(0 0 .35rem rgba(85,226,212,.32));
 }
 .story-continuum.is-story-visual-ready .hb-visual:not(.is-services-storytelling) .hb-orbit-one{
-  border-color:rgba(85,226,212,.42);
-  box-shadow:0 0 34px rgba(85,226,212,.13),inset 0 0 28px rgba(85,226,212,.07);
+  border-color:rgba(85,226,212,.46);
+  box-shadow:0 0 34px rgba(85,226,212,.12),inset 0 0 30px rgba(85,226,212,.07);
 }
 .story-continuum.is-story-visual-ready .hb-visual:not(.is-services-storytelling) .hb-orbit-two{
-  border-color:rgba(105,183,255,.38);
-  filter:drop-shadow(0 0 2.5px rgba(105,183,255,.24));
+  border-color:rgba(105,183,255,.4);
+  filter:drop-shadow(0 0 3px rgba(105,183,255,.24));
 }
 .story-continuum.is-story-visual-ready .hb-visual:not(.is-services-storytelling) .hb-core{
-  border-color:rgba(123,239,229,.78);
-  box-shadow:0 0 0 8px rgba(85,226,212,.1),0 0 56px rgba(40,123,255,.34),inset 0 0 28px rgba(85,226,212,.17);
+  border-color:rgba(85,226,212,.76);
+  box-shadow:0 0 0 12px rgba(85,226,212,.08),0 0 60px rgba(40,123,255,.36),inset 0 0 30px rgba(85,226,212,.15);
 }
 .story-continuum.is-story-visual-ready .hb-visual:not(.is-services-storytelling) .hb-node{
-  border-color:rgba(123,239,229,.54);
-  box-shadow:0 10px 28px rgba(0,0,0,.24),0 0 16px rgba(85,226,212,.14),inset 0 1px rgba(255,255,255,.07);
+  border-color:rgba(123,239,229,.5);
+  box-shadow:0 10px 28px rgba(0,0,0,.24),0 0 18px rgba(85,226,212,.14),inset 0 1px rgba(255,255,255,.06);
 }
 .story-continuum[data-story-region="work"] .hb-visual:not(.is-services-storytelling) .hb-network{
-  filter:brightness(1.34) contrast(1.16) saturate(1.18)
+  filter:brightness(1.75) contrast(1.22) saturate(1.24)
     drop-shadow(0 0 .42rem rgba(105,183,255,.32));
 }
 .story-continuum[data-story-region="process"] .hb-visual:not(.is-services-storytelling) .hb-core{
