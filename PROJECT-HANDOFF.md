@@ -63,7 +63,9 @@ BDIX AI یک وب‌سایت چندزبانه با Frontend و Backend مبتن�
     compositionهای بدون box، فاصله‌گذاری عمدی، gridهای نامتقارن و hierarchy
     متناسب جایگزین شده‌اند.
 -   Work، Process و About در desktop، tablet و mobile با staggered
-    positioning و خطوط ظریف به composition خدمات نزدیک شده‌اند.
+    positioning، negative space و فاصله‌گذاری هم‌سطح Services به composition
+    خدمات نزدیک شده‌اند؛ خطوط تزئینی، border، background و hover chrome از
+    plain content این سه بخش حذف شده است.
 -   Primary Visual در Brand Universe، Work، Process و About با filter، glow،
     network، core و nodeهای روشن‌تر به‌صورت section-specific خواناتر شده
     است؛ Visual جدید یا Canvas موازی ساخته نشده است.
@@ -73,6 +75,9 @@ BDIX AI یک وب‌سایت چندزبانه با Frontend و Backend مبتن�
 -   همان interpolation و anchorهای موجود در `hero-visual.js` حرکت visual را
     بین بخش‌ها پیوسته نگه می‌دارند؛ فقط opacity مقصدهای غیر Services برای
     continuity بهتر تنظیم شده و state اختصاصی Services تغییر نکرده است.
+-   در Work، Process و About، hover/active/focus غیرضروری روی articleها دیگر
+    رنگ، text-shadow، border، background یا box-shadow ایجاد نمی‌کند؛ focus
+    کنترل‌های واقعی و لینک‌ها همچنان توسط styleهای عمومی خودشان حفظ می‌شود.
 -   توسعهٔ بعدی باید همین زبان بصری را بدون شکستن سیستم موجود، به بخش‌های
     بعدی گسترش دهد.
 -   گسترش Typography فعلاً نباید به‌صورت یک پروژهٔ مستقل جدید با تغییرات
