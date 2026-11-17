@@ -164,3 +164,59 @@ html[dir="rtl"] .hb-eyebrow,html[dir="rtl"] .hb-node,html[dir="rtl"] .hb-visual-
   .hb-orbit-one,.hb-orbit-two,.hb-node{scale:1!important;transition:none!important}
   .hb-core{transform:none!important}
 }
+
+/* Keep the single visual legible across the complete story, while Services retains its own state. */
+.story-continuum.is-story-visual-ready .hb-visual:not(.is-services-storytelling){
+  filter:brightness(1.12) contrast(1.1) saturate(1.12)
+    drop-shadow(0 0 1.35rem rgba(40,123,255,.24))
+    drop-shadow(0 0 2rem rgba(85,226,212,.14));
+}
+.story-continuum.is-story-visual-ready .hb-visual:not(.is-services-storytelling) .hb-visual-glow{
+  opacity:.98!important;
+  filter:blur(10px) brightness(1.22) saturate(1.18);
+}
+.story-continuum.is-story-visual-ready .hb-visual:not(.is-services-storytelling) .hb-network{
+  filter:brightness(1.28) contrast(1.14) saturate(1.16)
+    drop-shadow(0 0 .38rem rgba(85,226,212,.28));
+}
+.story-continuum.is-story-visual-ready .hb-visual:not(.is-services-storytelling) .hb-orbit-one{
+  border-color:rgba(85,226,212,.42);
+  box-shadow:0 0 34px rgba(85,226,212,.13),inset 0 0 28px rgba(85,226,212,.07);
+}
+.story-continuum.is-story-visual-ready .hb-visual:not(.is-services-storytelling) .hb-orbit-two{
+  border-color:rgba(105,183,255,.38);
+  filter:drop-shadow(0 0 2.5px rgba(105,183,255,.24));
+}
+.story-continuum.is-story-visual-ready .hb-visual:not(.is-services-storytelling) .hb-core{
+  border-color:rgba(123,239,229,.78);
+  box-shadow:0 0 0 8px rgba(85,226,212,.1),0 0 56px rgba(40,123,255,.34),inset 0 0 28px rgba(85,226,212,.17);
+}
+.story-continuum.is-story-visual-ready .hb-visual:not(.is-services-storytelling) .hb-node{
+  border-color:rgba(123,239,229,.54);
+  box-shadow:0 10px 28px rgba(0,0,0,.24),0 0 16px rgba(85,226,212,.14),inset 0 1px rgba(255,255,255,.07);
+}
+.story-continuum[data-story-region="work"] .hb-visual:not(.is-services-storytelling) .hb-network{
+  filter:brightness(1.34) contrast(1.16) saturate(1.18)
+    drop-shadow(0 0 .42rem rgba(105,183,255,.32));
+}
+.story-continuum[data-story-region="process"] .hb-visual:not(.is-services-storytelling) .hb-core{
+  box-shadow:0 0 0 9px rgba(136,124,255,.1),0 0 60px rgba(85,226,212,.36),inset 0 0 30px rgba(136,124,255,.16);
+}
+.story-continuum[data-story-region="about"] .hb-visual:not(.is-services-storytelling) .hb-core{
+  box-shadow:0 0 0 9px rgba(85,226,212,.1),0 0 64px rgba(40,123,255,.38),inset 0 0 32px rgba(85,226,212,.18);
+}
+@media(max-width:640px){
+  .story-continuum.is-story-visual-ready .hb-visual:not(.is-services-storytelling){
+    filter:brightness(1.08) contrast(1.08) saturate(1.1)
+      drop-shadow(0 0 .9rem rgba(40,123,255,.2))
+      drop-shadow(0 0 1.35rem rgba(85,226,212,.12));
+  }
+  .story-continuum.is-story-visual-ready .hb-visual:not(.is-services-storytelling) .hb-network{
+    filter:brightness(1.2) contrast(1.1) saturate(1.12);
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .story-continuum.is-story-visual-ready .hb-visual:not(.is-services-storytelling){
+    filter:brightness(1.08) contrast(1.06) saturate(1.08);
+  }
+}

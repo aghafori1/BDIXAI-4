@@ -446,13 +446,13 @@
         x:item.key==='services'?serviceAnchor.x:sectionTargets[item.key],
         y:item.key==='services'?serviceAnchor.y:vh*(compact?(isFinal?.82:.88):(isFinal?.72:.86)),
         scale:item.key==='services'?serviceAnchor.scale:compact?(isFinal?.48:.50):(isFinal?.48:.50),
-        opacity:item.key==='services'?1:isFinal?.30:(compact?.20:.21)
+        opacity:item.key==='services'?1:isFinal?.34:(compact?.32:.34)
       });
     });
     const footer=bounds.find(item=>item.key==='footer');
     if(footer){
-      anchors.push({at:footer.start+vh*.02,x:innerWidth*.5,y:vh*.76,scale:compact?.48:.44,opacity:.18});
-      anchors.push({at:footer.start+Math.min(footer.end-footer.start, vh*.14),x:innerWidth*.5,y:vh*.74,scale:compact?.42:.40,opacity:0});
+      anchors.push({at:footer.start+vh*.02,x:innerWidth*.5,y:vh*.76,scale:compact?.48:.44,opacity:.24});
+      anchors.push({at:footer.start+Math.min(footer.end-footer.start, vh*.14),x:innerWidth*.5,y:vh*.74,scale:compact?.42:.40,opacity:.12});
     }
     return anchors.sort((a,b)=>a.at-b.at);
   };

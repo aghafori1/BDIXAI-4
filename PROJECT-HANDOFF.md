@@ -67,13 +67,19 @@ BDIX AI یک وب‌سایت چندزبانه با Frontend و Backend مبتن�
 -   Primary Visual در Brand Universe، Work، Process و About با filter، glow،
     network، core و nodeهای روشن‌تر به‌صورت section-specific خواناتر شده
     است؛ Visual جدید یا Canvas موازی ساخته نشده است.
+-   یک luminous baseline مشترک برای Primary Visual در کل story فعال است؛
+    Hero، Brand Universe، Work، Process، About، cinema/final و Footer دیگر
+    به حالت کم‌خوانا یا ناپدیدشوندهٔ ناگهانی نمی‌روند.
+-   همان interpolation و anchorهای موجود در `hero-visual.js` حرکت visual را
+    بین بخش‌ها پیوسته نگه می‌دارند؛ فقط opacity مقصدهای غیر Services برای
+    continuity بهتر تنظیم شده و state اختصاصی Services تغییر نکرده است.
 -   توسعهٔ بعدی باید همین زبان بصری را بدون شکستن سیستم موجود، به بخش‌های
     بعدی گسترش دهد.
 -   گسترش Typography فعلاً نباید به‌صورت یک پروژهٔ مستقل جدید با تغییرات
     پراکنده انجام شود؛ وضعیت فعلی Typography باید حفظ شود مگر اینکه
     صریحاً تغییر آن درخواست شود.
--   Services دست‌نخورده باقی مانده و JavaScript، visual system، animation،
-    RTL/LTR و responsive behavior تغییر نکرده‌اند.
+-   Services دست‌نخورده باقی مانده و ساختار Core/logo، Canvas، orbit، node،
+    mouse interaction، RTL/LTR و responsive behavior حفظ شده‌اند.
 
 ------------------------------------------------------------------------
 
@@ -494,11 +500,14 @@ Services در حال حاضر **مرجع زبان بصری و تعاملی** ب�
 
 این زبان به Brand Universe، Work، Process و About گسترش یافته و شدت نور
 و خوانایی Primary Visual آن‌ها نیز به‌صورت کنترل‌شده افزایش یافته است.
+نور پایه و continuity حرکت visual اکنون در کل story از Hero تا Footer
+حفظ می‌شود، در حالی که transformation اختصاصی Services باقی مانده است.
 
 ### نقطهٔ ادامه
 
 کار بعدی می‌تواند از بررسی بصری cross-browser و بهینه‌سازی جزئی responsive
-در صورت مشاهدهٔ مشکل واقعی ادامه پیدا کند.
+در صورت مشاهدهٔ مشکل واقعی ادامه پیدا کند؛ تست دستگاه فیزیکی و مرورگرهای
+غیر Chromium هنوز انجام نشده است.
 
 اما توسعه نباید صرفاً با کپی کردن Layout Services انجام شود.
 
