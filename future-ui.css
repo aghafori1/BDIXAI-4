@@ -1,0 +1,47 @@
+/* BDIX AI v2.7 — futuristic minimalism, no external dependencies */
+:root{--v27-bg:#060b14;--v27-surface:rgba(12,23,38,.62);--v27-blue:#287bff;--v27-blue-deep:#0b4fd8;--v27-cyan:#55e2d4;--v27-cyan-bright:#7befe5;--v27-violet:#887cff;--v27-text:#edf4ff;--v27-muted:#9dadbf;--v27-line:rgba(157,173,191,.18)}
+.cinema-v27-final-logo{z-index:4}
+.bdix-v27 .cards,.bdix-v27 .proof,.bdix-v27 .steps{gap:clamp(.75rem,1.6vw,1.2rem)}
+.bdix-v27 .card,.bdix-v27 .proof article,.bdix-v27 .step{border:1px solid var(--v27-line)!important;background:linear-gradient(145deg,rgba(12,23,38,.72),rgba(6,11,20,.48))!important;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(237,244,255,.035)}
+.bdix-v27 .card:hover,.bdix-v27 .proof article:hover,.bdix-v27 .step:hover{border-color:rgba(85,226,212,.32)!important;box-shadow:inset 0 1px 0 rgba(237,244,255,.06),0 18px 50px rgba(0,0,0,.18)}
+@media(max-width:700px){.bdix-v27 .card,.bdix-v27 .proof article,.bdix-v27 .step{backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bdix-v27 .card,.bdix-v27 .proof article,.bdix-v27 .step{transition:none!important}}
+
+/* BDIX AI Brand Universe — a transparent continuation of the shared page atmosphere. */
+.brand-universe{position:relative;padding-block:clamp(4rem,7vw,6.25rem);scroll-margin-block-start:5rem}
+.brand-universe .bu-layout{display:grid;grid-template-areas:"intro" "details";grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;align-items:start;row-gap:1.25rem;max-width:44rem;margin-inline:auto}
+.brand-universe .bu-intro-block{grid-area:intro;align-self:end;max-width:100%}
+.brand-universe .bu-details{grid-area:details;align-self:start;max-width:100%}
+.brand-universe .bu-eyebrow{display:flex;align-items:center;gap:.65rem;margin:0 0 1rem;color:#7BEFE5;font:600 .8rem/1.5 var(--font-display,sans-serif);letter-spacing:.12em}
+.brand-universe .bu-eyebrow-mark{display:block;width:1.8rem;height:1px;background:linear-gradient(90deg,rgba(85,226,212,0),#55E2D4);flex:0 0 auto}
+.brand-universe .bu-title{max-width:16ch;margin:0;color:#EDF4FF;font:700 clamp(2rem,4vw,3.35rem)/1.2 var(--font-display,sans-serif);letter-spacing:-.025em;text-wrap:balance}
+.brand-universe .bu-intro{max-width:42rem;margin:1rem 0 0;color:rgba(237,244,255,.74);font-size:clamp(1rem,1.25vw,1.1rem);line-height:1.85;text-wrap:pretty}
+.brand-universe .bu-topic-links{display:none;gap:.45rem;flex-wrap:wrap;margin-block-start:1rem}
+.brand-universe .bu-topic-links button{min-height:44px;padding:.5rem .75rem;border:1px solid rgba(157,190,226,.24);border-radius:.7rem;background:rgba(6,11,20,.56);color:#B8C9DB;font:600 .82rem/1.25 var(--font-display,sans-serif);cursor:pointer;transition:color .2s ease,border-color .2s ease,background-color .2s ease,box-shadow .2s ease}
+.brand-universe .bu-topic-links button[aria-pressed="true"]{border-color:rgba(123,239,229,.72);background:rgba(12,30,45,.82);color:#F3FFFF;box-shadow:0 0 18px rgba(85,226,212,.13)}
+.brand-universe .bu-topic-links button:focus-visible{outline:2px solid #7BEFE5;outline-offset:3px}
+.brand-universe .bu-details{min-height:12.5rem;padding-inline-start:1.1rem;border-inline-start:1px solid rgba(85,226,212,.42)}
+.brand-universe .bu-panel-kicker{margin:0 0 .55rem;color:#55E2D4;font-size:.78rem;font-weight:700;letter-spacing:.1em}
+.brand-universe .bu-panel h3{margin:0 0 .65rem;color:#EDF4FF;font:650 clamp(1.2rem,2vw,1.55rem)/1.45 var(--font-display,sans-serif);text-wrap:balance}
+.brand-universe .bu-panel-copy{max-width:42rem;margin:0;color:rgba(237,244,255,.78);font-size:1rem;line-height:1.85;text-wrap:pretty}
+.brand-universe .bu-panel[hidden]{display:none!important}
+.story-continuum .bu-orbit-tabs{position:absolute;inset:0;display:none;z-index:7}
+.story-continuum .bu-orbit-tab{--bu-x:50%;--bu-y:50%;position:absolute;left:var(--bu-x);top:var(--bu-y);display:inline-flex;align-items:center;justify-content:center;gap:.48rem;min-width:5.5rem;min-height:44px;max-width:min(8.5rem,calc(100vw - 2rem));padding:.55rem .72rem;transform:translate(-50%,-50%);border:1px solid rgba(157,190,226,.24);border-radius:.8rem;background:rgba(6,11,20,.68);color:#B8C9DB;font:650 .875rem/1.2 var(--font-display,sans-serif);white-space:nowrap;cursor:pointer;transition:color .28s ease,border-color .28s ease,background-color .28s ease,box-shadow .28s ease}
+.story-continuum .bu-orbit-tab[data-bu-topic="vision"]{--bu-x:50%;--bu-y:10%}
+.story-continuum .bu-orbit-tab[data-bu-topic="identity"]{--bu-x:81%;--bu-y:32%}
+.story-continuum .bu-orbit-tab[data-bu-topic="purpose"]{--bu-x:70%;--bu-y:76%}
+.story-continuum .bu-orbit-tab[data-bu-topic="philosophy"]{--bu-x:30%;--bu-y:76%}
+.story-continuum .bu-orbit-tab[data-bu-topic="future"]{--bu-x:19%;--bu-y:32%}
+.story-continuum .bu-tab-dot{width:.42rem;height:.42rem;flex:0 0 auto;border-radius:50%;background:#69B7FF;box-shadow:0 0 9px rgba(105,183,255,.54);transition:background-color .28s ease,box-shadow .28s ease,transform .28s ease}
+.story-continuum .bu-orbit-tab[aria-selected="true"]{z-index:2;border-color:rgba(123,239,229,.74);background:rgba(12,30,45,.88);color:#F3FFFF;box-shadow:0 0 22px rgba(85,226,212,.17),inset 0 1px rgba(237,244,255,.08)}
+.story-continuum .bu-orbit-tab[aria-selected="true"] .bu-tab-dot{background:#7BEFE5;box-shadow:0 0 10px 3px rgba(85,226,212,.46);transform:scale(1.12)}
+.story-continuum .bu-orbit-tab:hover{border-color:rgba(123,239,229,.6);color:#F3FFFF}
+.story-continuum .bu-orbit-tab:focus-visible{outline:2px solid #7BEFE5;outline-offset:4px}
+@media(max-width:850px){.brand-universe .bu-topic-links{display:flex}.brand-universe{padding-block:2rem 4rem}.brand-universe .bu-layout{grid-template-areas:"intro" "details";grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;row-gap:1rem}.brand-universe .bu-intro-block,.brand-universe .bu-details{max-width:44rem}.brand-universe .bu-details{min-height:0}.brand-universe .bu-intro{margin-block-end:0}}
+@media(max-width:380px){.brand-universe .bu-topic-links{gap:.35rem}.brand-universe .bu-topic-links button{padding-inline:.55rem;font-size:.75rem}.brand-universe{padding-block:2rem 3.5rem}.story-continuum .bu-orbit-tab{gap:.32rem;padding-inline:.46rem;font-size:.78rem}}
+@media(prefers-reduced-motion:reduce){.brand-universe .bu-topic-links button,.story-continuum .bu-orbit-tab,.story-continuum .bu-tab-dot{transition:none!important}}
+
+/* Brand topics are controls on the shared Hero galaxy, never a second core. */
+.story-continuum[data-story-region="brand-universe"] .bu-orbit-tabs{display:block}
+.story-continuum[data-story-region="brand-universe"] .hb-node{display:none}
+.story-continuum[data-story-region="hero"] .bu-orbit-tabs{display:none}

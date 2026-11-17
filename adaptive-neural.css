@@ -1,0 +1,9 @@
+/* BDIX AI v3.0 — adaptive morphing neural object */
+body.bdix-v30>.neural-mesh-v27{inset:4.7rem 0 0;opacity:.78;mix-blend-mode:screen;contain:strict}
+body.bdix-v30>.neural-mesh-v27:before{display:none}
+body.bdix-v30>.neural-mesh-v27 canvas{opacity:1;filter:drop-shadow(0 0 18px rgba(40,123,255,.28))}
+body.bdix-v30>.neural-mesh-v27[data-scene="services"] canvas{filter:drop-shadow(0 0 24px rgba(85,226,212,.3))}
+body.bdix-v30>.neural-mesh-v27[data-scene="process"] canvas{filter:drop-shadow(0 0 20px rgba(136,124,255,.28))}
+body.bdix-v30>.neural-mesh-v27[data-burst="true"] canvas{filter:drop-shadow(0 0 34px rgba(85,226,212,.46))}
+@media(max-width:700px){body.bdix-v30>.neural-mesh-v27{inset:4.2rem 0 4.2rem;opacity:.68}}
+@media(prefers-reduced-motion:reduce){body.bdix-v30>.neural-mesh-v27{display:none!important}}

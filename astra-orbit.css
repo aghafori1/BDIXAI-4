@@ -1,0 +1,5 @@
+/* BDIX AI v3.2 — minimal luminous orbital element only */
+.bdix-v32 .neural-mesh-v27{mix-blend-mode:screen;filter:saturate(1.04) contrast(1.02)}
+.bdix-v32 .neural-mesh-v27 canvas{opacity:.94}
+@media (max-width:699px){.bdix-v32 .neural-mesh-v27 canvas{opacity:.86}}
+@media (prefers-reduced-motion:reduce){.bdix-v32 .neural-mesh-v27{display:none!important}}

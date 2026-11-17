@@ -1,0 +1,9 @@
+# Never publish project internals with the website
+_archive/
+handoff/
+.githooks/
+AGENTS.md
+README.md
+README_FA.md
+.gitignore
+.gitattributes

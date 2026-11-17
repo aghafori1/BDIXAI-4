@@ -1,0 +1,20 @@
+/* One shared BDIX AI environment for Home and Contact. */
+:root{--bdix-space:#060b14;--bdix-blue:#287bff;--bdix-cyan:#55e2d4;--bdix-violet:#887cff}
+html{background:var(--bdix-space);scroll-behavior:smooth;overflow-x:clip}
+body.bdix-global{position:relative;isolation:isolate;background:transparent!important;background-color:transparent!important;overflow-x:clip}
+#particle-background{position:fixed;z-index:0;inset:0;width:100%;height:100%;display:block;pointer-events:none;touch-action:none;background:var(--bdix-space)}
+body.bdix-global:before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.022;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");mix-blend-mode:soft-light}
+body.bdix-global>.neural-mesh-v27{position:fixed;inset:4.7rem 0 0;z-index:1;opacity:.5;pointer-events:none;overflow:hidden;contain:layout paint style;isolation:isolate}
+.neural-mesh-v27:before{content:"";position:absolute;inset:12% 10%;background:radial-gradient(circle at 50% 48%,rgba(40,123,255,.16),rgba(85,226,212,.045) 32%,transparent 68%);filter:blur(18px);opacity:.9}
+.neural-mesh-v27 canvas{display:block;width:100%;height:100%;opacity:.94;filter:drop-shadow(0 0 16px rgba(40,123,255,.2));transition:opacity .35s ease}
+.neural-mesh-v27-fallback{position:absolute;inset:0;display:grid;place-items:center;opacity:.3;transition:opacity .35s ease}
+.neural-mesh-v27-fallback img{width:clamp(170px,24vw,360px);height:auto;filter:drop-shadow(0 0 32px rgba(40,123,255,.42))}
+.neural-mesh-v27.is-ready .neural-mesh-v27-fallback{opacity:0}
+body.bdix-global>header,body.bdix-global>main,body.bdix-global>footer,body.bdix-global>.page,body.bdix-global>dialog{z-index:2}
+body.bdix-global>.site-footer{background:transparent!important}
+body.bdix-global>header{position:relative;z-index:20}
+body.bdix-global>dialog{z-index:30}
+.story-continuum>.brand-universe,body.bdix-global main>.section,body.bdix-global main>.cinema-v25-bottom,body.bdix-global>.site-footer,body.bdix-global .contact-footer{border-top:0!important}
+body.bdix-global .site-loader{background:rgba(6,11,20,.72)!important}
+@media(max-width:700px){body.bdix-global>.neural-mesh-v27{inset:4.2rem 0 4.2rem;opacity:.5}.neural-mesh-v27:before{inset:8% -25%;opacity:.65}.neural-mesh-v27 canvas{opacity:.78}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}body.bdix-global>.neural-mesh-v27{display:none!important}#particle-background{filter:saturate(.88)}}

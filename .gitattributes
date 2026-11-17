@@ -1,2 +1,17 @@
-# Auto detect text files and perform LF normalization
+# Normalize line endings
 * text=auto
+
+# Shell hooks must stay LF so they run under sh on every platform
+.githooks/* text eol=lf
+
+# Binary assets — never touch
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.mp4 binary
+*.webm binary
+*.woff2 binary
+*.ttf binary

@@ -1,0 +1,32 @@
+#!/bin/sh
+# Block a commit that changes the project without updating the handoff doc.
+# Rule source: AGENTS.md  (handoff/CONVERSATION-TRANSFER.md must describe CURRENT state)
+
+HANDOFF="handoff/CONVERSATION-TRANSFER.md"
+
+changed=$(git diff --cached --name-only --diff-filter=ACMRD)
+[ -z "$changed" ] && exit 0
+
+# Files that never require a handoff update
+exempt=$(printf '%s\n' "$changed" | grep -Ev '^(_archive/|handoff/|AGENTS\.md$|\.gitignore$|\.gitattributes$|\.githooks/|README\.md$|README_FA\.md$)')
+
+# Nothing but exempt files changed -> fine
+[ -z "$exempt" ] && exit 0
+
+# Project files changed: the handoff doc must be part of this commit
+if ! printf '%s\n' "$changed" | grep -Fxq "$HANDOFF"; then
+  echo ""
+  echo "  COMMIT BLOCKED - the handoff file was not updated."
+  echo ""
+  echo "  You changed project files but did not update:"
+  echo "      $HANDOFF"
+  echo ""
+  echo "  Rule (AGENTS.md): after every edit, REWRITE the handoff doc so it"
+  echo "  describes the CURRENT state. Replace content; do not append."
+  echo ""
+  echo "  To bypass once (not recommended):  git commit --no-verify"
+  echo ""
+  exit 1
+fi
+
+exit 0

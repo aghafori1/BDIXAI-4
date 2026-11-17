@@ -1,0 +1,342 @@
+/* Responsive static card grids — no carousel, fan, or numbered card chrome. */
+.bdix-v35 #services,
+.bdix-v35 #work,
+.bdix-v35 #process,
+.bdix-v35 #about{overflow-x:clip}
+
+.bdix-v35 .cards.portfolio-arc,
+.bdix-v35 .proof.portfolio-arc,
+.bdix-v35 .steps.portfolio-arc,
+.bdix-v35 .about-principles.portfolio-arc{
+  position:relative!important;
+  display:grid!important;
+  grid-auto-flow:row;
+  align-items:stretch;
+  gap:clamp(.75rem,1.4vw,1.25rem);
+  width:100%!important;
+  max-width:none!important;
+  height:auto!important;
+  min-height:0!important;
+  margin-block:1rem;
+  padding:0;
+  overflow:visible!important;
+  border:0!important;
+  border-radius:0!important;
+  background:none!important;
+  box-shadow:none!important;
+  perspective:none!important;
+  transform:none!important;
+  touch-action:auto;
+}
+.bdix-v35 .cards.portfolio-arc{grid-template-columns:repeat(5,minmax(0,1fr))}
+.bdix-v35 .proof.portfolio-arc{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bdix-v35 .steps.portfolio-arc{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bdix-v35 .about-principles.portfolio-arc{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+.bdix-v35 .cards.portfolio-arc>article,
+.bdix-v35 .proof.portfolio-arc>article,
+.bdix-v35 .steps.portfolio-arc>article,
+.bdix-v35 .about-principles.portfolio-arc>article{
+  position:relative!important;
+  inset:auto!important;
+  top:auto!important;
+  left:auto!important;
+  width:auto!important;
+  height:auto!important;
+  min-width:0;
+  min-height:0!important;
+  margin:0;
+  padding:1.25rem!important;
+  opacity:1!important;
+  z-index:auto!important;
+  transform:none!important;
+  translate:none!important;
+  filter:none!important;
+  transition:border-color 180ms ease,background-color 180ms ease,box-shadow 180ms ease!important;
+  overflow:hidden;
+  border:1px solid rgba(105,183,255,.22)!important;
+  border-radius:.9rem!important;
+  border-inline-start:1px solid rgba(105,183,255,.22)!important;
+  border-top:1px solid rgba(105,183,255,.22)!important;
+  background:linear-gradient(155deg,rgba(14,29,48,.88),rgba(7,16,30,.76))!important;
+  box-shadow:inset 0 1px 0 rgba(237,244,255,.035),0 8px 24px rgba(0,6,20,.18)!important;
+  cursor:default!important;
+  user-select:auto;
+  backface-visibility:visible;
+}
+.bdix-v35 .cards.portfolio-arc>article h3,
+.bdix-v35 .proof.portfolio-arc>article h3,
+.bdix-v35 .steps.portfolio-arc>article h3,
+.bdix-v35 .about-principles.portfolio-arc>article h3{
+  margin:.1rem 0 .55rem!important;
+  font-size:clamp(1rem,1.25vw,1.22rem)!important;
+  line-height:1.45!important;
+}
+.bdix-v35 .cards.portfolio-arc>article p,
+.bdix-v35 .cards.portfolio-arc>article li,
+.bdix-v35 .proof.portfolio-arc>article p,
+.bdix-v35 .steps.portfolio-arc>article p,
+.bdix-v35 .about-principles.portfolio-arc>article p{
+  margin:.35rem 0 0;
+  font-size:.875rem!important;
+  line-height:1.65!important;
+}
+.bdix-v35 .cards.portfolio-arc>article:hover,
+.bdix-v35 .cards.portfolio-arc>article:focus-visible,
+.bdix-v35 .proof.portfolio-arc>article:hover,
+.bdix-v35 .proof.portfolio-arc>article:focus-visible,
+.bdix-v35 .steps.portfolio-arc>article:hover,
+.bdix-v35 .steps.portfolio-arc>article:focus-visible,
+.bdix-v35 .about-principles.portfolio-arc>article:hover,
+.bdix-v35 .about-principles.portfolio-arc>article:focus-visible{
+  border-color:rgba(85,226,212,.46)!important;
+  box-shadow:inset 0 1px 0 rgba(237,244,255,.055),0 12px 30px rgba(0,6,20,.28)!important;
+}
+
+@media(max-width:1100px){
+  .bdix-v35 .cards.portfolio-arc{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .bdix-v35 .steps.portfolio-arc{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:767px){
+  .bdix-v35 .cards.portfolio-arc,
+  .bdix-v35 .proof.portfolio-arc,
+  .bdix-v35 .steps.portfolio-arc,
+  .bdix-v35 .about-principles.portfolio-arc{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bdix-v35 .cards.portfolio-arc>article,
+  .bdix-v35 .proof.portfolio-arc>article,
+  .bdix-v35 .steps.portfolio-arc>article,
+  .bdix-v35 .about-principles.portfolio-arc>article{padding:1rem!important}
+}
+@media(max-width:520px){
+  .bdix-v35 .cards.portfolio-arc,
+  .bdix-v35 .proof.portfolio-arc,
+  .bdix-v35 .steps.portfolio-arc,
+  .bdix-v35 .about-principles.portfolio-arc{grid-template-columns:minmax(0,1fr)}
+}
+@media(prefers-reduced-motion:reduce){
+  .bdix-v35 .cards.portfolio-arc>article,
+  .bdix-v35 .proof.portfolio-arc>article,
+  .bdix-v35 .steps.portfolio-arc>article,
+  .bdix-v35 .about-principles.portfolio-arc>article{transition:none!important}
+}
+
+/* Stage 5A — Services: spatial, borderless content layout. */
+#services .cards.portfolio-arc{
+  grid-template-columns:repeat(12,minmax(0,1fr))!important;
+  grid-auto-flow:row;
+  align-items:start!important;
+  gap:clamp(2.25rem,4.6vw,4rem) clamp(.75rem,1.8vw,1.6rem)!important;
+  margin-block:clamp(2.5rem,5vw,4.25rem)!important;
+}
+#services .cards.portfolio-arc>.card{
+  min-width:0!important;
+  min-height:0!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:none!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+  transition:none!important;
+  transform:none!important;
+  translate:none!important;
+  filter:none!important;
+  animation:none!important;
+}
+#services .cards.portfolio-arc>.card::before,
+#services .cards.portfolio-arc>.card::after{
+  content:none!important;
+  display:none!important;
+}
+#services .cards.portfolio-arc>.card:nth-child(1){grid-column:2/span 4;grid-row:1}
+#services .cards.portfolio-arc>.card:nth-child(2){grid-column:8/span 4;grid-row:1;margin-block-start:clamp(3rem,6vw,5.25rem)!important}
+#services .cards.portfolio-arc>.card:nth-child(3){grid-column:5/span 5;grid-row:2}
+#services .cards.portfolio-arc>.card:nth-child(4){grid-column:2/span 5;grid-row:3;margin-block-start:clamp(1.5rem,3.2vw,2.75rem)!important}
+#services .cards.portfolio-arc>.card:nth-child(5){grid-column:9/span 4;grid-row:3;margin-block-start:.5rem!important}
+#services .cards.portfolio-arc>.card h3{
+  max-width:19ch;
+  margin:0 0 .75rem!important;
+  font-size:clamp(1.5rem,2.25vw,2.05rem)!important;
+  line-height:1.42!important;
+}
+#services .cards.portfolio-arc>.card p,
+#services .cards.portfolio-arc>.card li{
+  margin:.45rem 0 0;
+  color:var(--m);
+  font-size:1rem!important;
+  line-height:1.7!important;
+}
+#services .cards.portfolio-arc>.card ul{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:.18rem .75rem;
+  margin:1rem 0 0!important;
+  padding-inline-start:1.15rem;
+}
+#services .cards.portfolio-arc>.card li::marker{color:var(--g)}
+#services .cards.portfolio-arc>.card:hover,
+#services .cards.portfolio-arc>.card:focus-visible,
+#services .cards.portfolio-arc>.card.is-lit{
+  transform:none!important;
+  box-shadow:none!important;
+  filter:none!important;
+}
+#services .cards.portfolio-arc>.card:hover h3,
+#services .cards.portfolio-arc>.card:focus-visible h3,
+#services .cards.portfolio-arc>.card.is-lit h3{
+  color:inherit;
+  text-shadow:none;
+}
+@media(max-width:980px){
+  #services .cards.portfolio-arc{
+    grid-template-columns:repeat(6,minmax(0,1fr))!important;
+    gap:2.5rem .9rem!important;
+  }
+  #services .cards.portfolio-arc>.card:nth-child(1){grid-column:1/span 3;grid-row:1;margin-block-start:0!important}
+  #services .cards.portfolio-arc>.card:nth-child(2){grid-column:4/span 3;grid-row:1;margin-block-start:3rem!important}
+  #services .cards.portfolio-arc>.card:nth-child(3){grid-column:2/span 4;grid-row:2;margin-block-start:0!important}
+  #services .cards.portfolio-arc>.card:nth-child(4){grid-column:1/span 3;grid-row:3;margin-block-start:1.5rem!important}
+  #services .cards.portfolio-arc>.card:nth-child(5){grid-column:4/span 3;grid-row:3;margin-block-start:0!important}
+}
+@media(max-width:640px){
+  #services .cards.portfolio-arc{
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:2.15rem!important;
+    margin-block:2rem!important;
+  }
+  #services .cards.portfolio-arc>.card:nth-child(n){
+    grid-column:1;
+    grid-row:auto;
+    margin-block-start:0!important;
+  }
+  #services .cards.portfolio-arc>.card h3{font-size:clamp(1.4rem,6vw,1.75rem)!important}
+}
+
+/* Stage 5B — Services: accumulated scroll composition. */
+#services.is-services-composition-ready .cards.portfolio-arc>.card{
+  opacity:var(--service-opacity,1)!important;
+  transform:translate3d(0,var(--service-offset-y,0px),0) scale(var(--service-scale,1))!important;
+  transform-origin:center center;
+  will-change:opacity,transform;
+}
+@media(prefers-reduced-motion:reduce){
+  #services.is-services-composition-ready .cards.portfolio-arc>.card{
+    opacity:1!important;
+    transform:none!important;
+    will-change:auto;
+  }
+}
+
+/* Stage 5C — keep the Services introduction in-flow and editorially narrow. */
+#services .wrap>.sh>p{
+  max-width:min(36rem,100%);
+  text-wrap:pretty;
+}
+
+/* Stage 5C — restore contrast to the existing Services visual, not its content. */
+.story-continuum.is-story-visual-ready .hb-visual.is-services-storytelling{
+  opacity:calc(.20 + var(--hb-services-progress,0)*.24)!important;
+  filter:brightness(1.16) contrast(1.1) saturate(1.18) drop-shadow(0 0 1.5rem rgba(85,226,212,.18));
+}
+.story-continuum.is-story-visual-ready .hb-visual.is-services-storytelling .hb-network{
+  filter:brightness(1.75) contrast(1.22) saturate(1.24) drop-shadow(0 0 .35rem rgba(85,226,212,.32));
+}
+.story-continuum.is-story-visual-ready .hb-visual.is-services-storytelling .hb-visual-glow{
+  background:radial-gradient(circle,rgba(40,123,255,.25),rgba(85,226,212,.12) 38%,transparent 72%);
+  filter:blur(10px) brightness(1.28) saturate(1.22);
+}
+.story-continuum.is-story-visual-ready .hb-visual.is-services-storytelling .hb-orbit-one{
+  border-color:rgba(85,226,212,.46);
+  box-shadow:0 0 34px rgba(85,226,212,.12),inset 0 0 30px rgba(85,226,212,.07);
+}
+.story-continuum.is-story-visual-ready .hb-visual.is-services-storytelling .hb-orbit-two{
+  border-color:rgba(105,183,255,.4);
+  filter:drop-shadow(0 0 3px rgba(105,183,255,.24));
+}
+.story-continuum.is-story-visual-ready .hb-visual.is-services-storytelling .hb-core{
+  border-color:rgba(85,226,212,.76);
+  box-shadow:0 0 0 12px rgba(85,226,212,.08),0 0 60px rgba(40,123,255,.36),inset 0 0 30px rgba(85,226,212,.15);
+  filter:brightness(calc(var(--hb-identity-core-brightness,1) + var(--hb-services-burst,0)*.34 + .12));
+}
+.story-continuum.is-story-visual-ready .hb-visual.is-services-storytelling .hb-node:not([aria-pressed="true"]):not(:hover):not(:focus-visible){
+  border-color:rgba(123,239,229,.5);
+  box-shadow:0 10px 28px rgba(0,0,0,.24),0 0 18px rgba(85,226,212,.14),inset 0 1px rgba(255,255,255,.06);
+  filter:brightness(calc(1.12 + var(--hb-services-progress,0)*.08));
+}
+@media(max-width:640px){
+  .story-continuum.is-story-visual-ready .hb-visual.is-services-storytelling{
+    filter:brightness(1.2) contrast(1.12) saturate(1.2);
+  }
+  .story-continuum.is-story-visual-ready .hb-visual.is-services-storytelling .hb-network{
+    filter:brightness(1.9) contrast(1.25) saturate(1.22);
+  }
+  .story-continuum.is-story-visual-ready .hb-visual.is-services-storytelling .hb-visual-glow{
+    filter:blur(3px) brightness(1.22) saturate(1.2);
+  }
+  .story-continuum.is-story-visual-ready .hb-visual.is-services-storytelling .hb-orbit-one{
+    box-shadow:0 0 8px rgba(85,226,212,.12),inset 0 0 6px rgba(85,226,212,.08);
+  }
+  .story-continuum.is-story-visual-ready .hb-visual.is-services-storytelling .hb-orbit-two{
+    filter:none;
+  }
+  .story-continuum.is-story-visual-ready .hb-visual.is-services-storytelling .hb-core{
+    box-shadow:0 0 0 2px rgba(85,226,212,.08),0 0 12px rgba(40,123,255,.3),inset 0 0 5px rgba(85,226,212,.15);
+  }
+  .story-continuum.is-story-visual-ready .hb-visual.is-services-storytelling .hb-node:not([aria-pressed="true"]):not(:hover):not(:focus-visible){
+    box-shadow:0 2px 6px rgba(0,0,0,.24),0 0 5px rgba(85,226,212,.13),inset 0 1px rgba(255,255,255,.06);
+  }
+}
+
+/* Stage 5D — keep the one Primary Visual prominent; reserve a readable Services stage on compact screens. */
+@media(min-width:901px){
+  #services .wrap>.sh{
+    grid-template-columns:minmax(0,36rem) minmax(0,1fr);
+    align-items:end;
+  }
+  #services .wrap>.sh>div,
+  #services .wrap>.sh>p{grid-column:1}
+  #services .wrap>.sh>p{max-width:36rem;margin:0}
+}
+.story-continuum:is(.is-story-visual-ready,.is-story-visual-static) .hb-visual.is-services-storytelling{
+  overflow:visible!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  opacity:calc(.74 + var(--hb-services-progress,0)*.26)!important;
+  filter:contrast(1.14) saturate(1.22) drop-shadow(0 0 1.25rem rgba(40,123,255,.24)) drop-shadow(0 0 2rem rgba(85,226,212,.16));
+}
+.story-continuum:is(.is-story-visual-ready,.is-story-visual-static) .hb-visual.is-services-storytelling .hb-network{
+  filter:brightness(1.38) contrast(1.2) saturate(1.24) drop-shadow(0 0 .42rem rgba(85,226,212,.42));
+}
+.story-continuum:is(.is-story-visual-ready,.is-story-visual-static) .hb-visual.is-services-storytelling .hb-visual-glow{
+  background:radial-gradient(circle,rgba(40,123,255,.34),rgba(85,226,212,.19) 34%,rgba(40,123,255,.07) 58%,transparent 74%);
+  filter:blur(10px) brightness(1.22) saturate(1.26);
+}
+.story-continuum:is(.is-story-visual-ready,.is-story-visual-static) .hb-visual.is-services-storytelling .hb-orbit-one{
+  border-color:rgba(85,226,212,.54);
+  box-shadow:0 0 38px rgba(85,226,212,.16),inset 0 0 32px rgba(85,226,212,.09);
+}
+.story-continuum:is(.is-story-visual-ready,.is-story-visual-static) .hb-visual.is-services-storytelling .hb-orbit-two{
+  border-color:rgba(105,183,255,.46);
+  filter:drop-shadow(0 0 3px rgba(105,183,255,.28));
+}
+.story-continuum:is(.is-story-visual-ready,.is-story-visual-static) .hb-visual.is-services-storytelling .hb-core{
+  width:31%;
+  border-color:rgba(123,239,229,.86);
+  box-shadow:0 0 0 9px rgba(85,226,212,.12),0 0 66px rgba(40,123,255,.4),inset 0 0 32px rgba(85,226,212,.19);
+}
+.story-continuum:is(.is-story-visual-ready,.is-story-visual-static) .hb-visual.is-services-storytelling .hb-node:not([aria-pressed="true"]):not(:hover):not(:focus-visible){
+  border-color:rgba(123,239,229,.68);
+  box-shadow:0 10px 28px rgba(0,0,0,.24),0 0 20px rgba(85,226,212,.2),inset 0 1px rgba(255,255,255,.08);
+}
+@media(min-width:641px) and (max-width:980px){
+  #services .cards.portfolio-arc{margin-block-start:22rem!important}
+}
+@media(max-width:640px){
+  #services .cards.portfolio-arc{margin-block-start:20rem!important}
+  .story-continuum:is(.is-story-visual-ready,.is-story-visual-static) .hb-visual.is-services-storytelling .hb-core{
+    width:32%;
+  }
+}

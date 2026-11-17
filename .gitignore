@@ -1,0 +1,31 @@
+# ---- OS junk ----
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# ---- Editor / tooling ----
+.cursor/
+.vscode/
+.idea/
+*.swp
+
+# ---- Temp / logs ----
+*.log
+*.tmp
+~$*
+
+# ---- Heavy archive payloads (kept on disk, deliberately not in git) ----
+_archive/qa/
+_archive/brand-unused/
+_archive/root-images/
+_archive/stray/
+# Local Python environment and secrets
+.venv/
+**/.venv/
+.env
+**/.env
+__pycache__/
+**/__pycache__/
+*.py[cod]
+backend/config/db.sqlite3
+backend/config/staticfiles/
