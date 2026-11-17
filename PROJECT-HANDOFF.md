@@ -60,8 +60,13 @@ BDIX AI یک وب‌سایت چندزبانه با Frontend و Backend مبتن�
 -   Services اکنون مرجع اصلی زبان بصری/اسکرولی پروژه است.
 -   Brand Universe، Work، Process و About اکنون از همان زبان spatial و
     editorial استفاده می‌کنند؛ کارت‌های قابل‌مشاهدهٔ این بخش‌ها با
-    compositionهای بدون box، فاصله‌گذاری عمدی و hierarchy متناسب جایگزین
-    شده‌اند.
+    compositionهای بدون box، فاصله‌گذاری عمدی، gridهای نامتقارن و hierarchy
+    متناسب جایگزین شده‌اند.
+-   Work، Process و About در desktop، tablet و mobile با staggered
+    positioning و خطوط ظریف به composition خدمات نزدیک شده‌اند.
+-   Primary Visual در Brand Universe، Work، Process و About با filter، glow،
+    network، core و nodeهای روشن‌تر به‌صورت section-specific خواناتر شده
+    است؛ Visual جدید یا Canvas موازی ساخته نشده است.
 -   توسعهٔ بعدی باید همین زبان بصری را بدون شکستن سیستم موجود، به بخش‌های
     بعدی گسترش دهد.
 -   گسترش Typography فعلاً نباید به‌صورت یک پروژهٔ مستقل جدید با تغییرات
@@ -487,12 +492,13 @@ Premium Typography
 Services در حال حاضر **مرجع زبان بصری و تعاملی** برای توسعهٔ بخش‌های بعدی
 است.
 
-گسترش این زبان به سایر بخش‌ها هنوز انجام نشده است.
+این زبان به Brand Universe، Work، Process و About گسترش یافته و شدت نور
+و خوانایی Primary Visual آن‌ها نیز به‌صورت کنترل‌شده افزایش یافته است.
 
 ### نقطهٔ ادامه
 
-کار بعدی می‌تواند از توسعهٔ بخش‌های بعدی سایت، با استفاده از زبان بصری
-تثبیت‌شدهٔ Services، ادامه پیدا کند.
+کار بعدی می‌تواند از بررسی بصری cross-browser و بهینه‌سازی جزئی responsive
+در صورت مشاهدهٔ مشکل واقعی ادامه پیدا کند.
 
 اما توسعه نباید صرفاً با کپی کردن Layout Services انجام شود.
 
