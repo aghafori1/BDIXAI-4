@@ -274,14 +274,20 @@ Typography در وضعیت فعلی به‌عنوان یک سیستم کنترل
 
 ### فونت‌ها
 
-فونت جدید یا dependency جدید اضافه نشده است.
+سیستم Typography فعلی فقط از فونت‌های local با `font-display: swap` استفاده
+می‌کند و برای هر زبان از `html[lang]` انتخاب می‌شود:
 
--   عربی Display: `Alexandria`
--   عربی Text: `Noto Sans Arabic`
--   فارسی: `Vazirmatn`
--   انگلیسی: `Space Grotesk`
+-   عربی: `IBM Plex Sans Arabic` با وزن‌های 400، 500، 600 و 700 از
+    `fonts/ar/IBMPlexSansArabic-*.woff2`
+-   فارسی: `Vazirmatn` Variable از `fonts/fa/vazirmatn-variable.woff2`
+-   انگلیسی: `Manrope` Variable با بازهٔ 200–800 از
+    `fonts/en/Manrope-Variable.woff2`
 
-روش loading موجود باید حفظ شود.
+`Manrope-Variable.woff2` از فایل bundled پروژه در
+`fonts/en/Manrope/Manrope-VariableFont_wght.ttf` تولید شده است. فایل‌های
+قدیمی Alexandria، Noto Sans Arabic و Space Grotesk در سیستم فعال Typography
+load نمی‌شوند. وزن تیترها و متن‌ها در محدودهٔ متوسط و خوانا نگه داشته شده و
+رفتار RTL/LTR، layout و animation تغییر نکرده است.
 
 ### رنگ‌ها
 

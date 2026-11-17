@@ -11,7 +11,7 @@
 .cinema-v25-beat.side-start{inset-inline-start:clamp(1.25rem,7vw,7rem);text-align:start;transform-origin:20% 50%}
 .cinema-v25-beat.side-end{inset-inline-end:clamp(1.25rem,7vw,7rem);text-align:end;transform-origin:80% 50%}
 .cinema-v25-beat.center{inset-inline:12vw;width:auto;text-align:center;transform-origin:50% 50%}
-.cinema-v25-index{display:block;margin-block-end:.65rem;color:rgba(85,226,212,.72);font:600 .72rem/1.2 "Space Grotesk",sans-serif;letter-spacing:.2em}
+.cinema-v25-index{display:block;margin-block-end:.65rem;color:rgba(85,226,212,.72);font:600 .72rem/1.2 var(--font-display,sans-serif);letter-spacing:.2em}
 .cinema-v25-word{margin:0;display:inline-block;font-size:clamp(5rem,13vw,11.5rem);font-weight:790;line-height:1.05;letter-spacing:-.055em;color:var(--c-white);background:none;-webkit-text-fill-color:currentColor;filter:none;text-wrap:balance}
 [dir="rtl"] .cinema-v25-word{letter-spacing:-.035em}
 .cinema-v25-trust-primary .cinema-v25-word[data-cinema="trust"]{width:fit-content;max-width:100%;font-size:clamp(3.5rem,8vw,7rem);line-height:1.1;letter-spacing:-.025em}

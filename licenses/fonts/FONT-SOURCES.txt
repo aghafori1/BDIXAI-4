@@ -1,20 +1,20 @@
-BDIX AI v0.9 — Font source manifest
+BDIX AI — Active font source manifest
 
-Arabic display: Alexandria variable (100–900)
-Source: https://github.com/Gue3bara/Alexandria
-File: fonts/ar/alexandria-variable.ttf
-
-Arabic body/UI: Noto Sans Arabic variable (weight 100–900; width 62.5–100)
-Source: https://github.com/google/fonts/tree/main/ofl/notosansarabic
-File: fonts/ar/noto-sans-arabic-variable.ttf
+Arabic display/body/UI: IBM Plex Sans Arabic
+Source: https://github.com/IBM/plex
+Files: fonts/ar/IBMPlexSansArabic-Regular.woff2
+       fonts/ar/IBMPlexSansArabic-Medium.woff2
+       fonts/ar/IBMPlexSansArabic-SemiBold.woff2
+       fonts/ar/IBMPlexSansArabic-Bold.woff2
 
 Persian display/body/UI: Vazirmatn variable (100–900)
 Source: https://github.com/rastikerdar/vazirmatn
 File: fonts/fa/vazirmatn-variable.woff2
 
-English display/body/UI in this supplied-font build: Space Grotesk variable (300–700)
-Source: https://github.com/floriankarsten/space-grotesk
-File: fonts/en/space-grotesk-variable.woff2
+English display/body/UI: Manrope variable (200–800)
+Source: https://github.com/googlefonts/manrope
+Source TTF: fonts/en/Manrope/Manrope-VariableFont_wght.ttf
+Active WOFF2: fonts/en/Manrope-Variable.woff2
 
 License: SIL Open Font License 1.1
-Loading: local self-hosted files with font-display: swap
+Loading: local self-hosted WOFF2 files with font-display: swap

@@ -34,7 +34,7 @@
 .cinema-v25-trust-eyebrow{
   margin:0 0 .75rem;
   color:var(--c-cyan,#55e2d4);
-  font:600 .74rem/1.5 "Space Grotesk",sans-serif;
+  font:600 .74rem/1.5 var(--font-display,sans-serif);
   letter-spacing:.12em;
 }
 [dir="rtl"] .cinema-v25-trust-eyebrow{letter-spacing:0}

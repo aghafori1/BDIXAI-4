@@ -177,18 +177,20 @@ html[dir=ltr] .hero:after{transform:scaleX(-1)}
 @media(prefers-reduced-motion:reduce){.energy-canvas{opacity:.68;filter:saturate(.92)}.energy-orbit{opacity:.35}.energy-stage:before{filter:blur(18px)}}
 
 /* v0.9 — official locale-aware premium typography */
-@font-face{font-family:'Alexandria';src:url('fonts/ar/alexandria-variable.ttf') format('truetype');font-style:normal;font-weight:100 900;font-display:swap}
-@font-face{font-family:'Noto Sans Arabic';src:url('fonts/ar/noto-sans-arabic-variable.ttf') format('truetype');font-style:normal;font-weight:100 900;font-stretch:62.5% 100%;font-display:swap}
+@font-face{font-family:'IBM Plex Sans Arabic';src:url('fonts/ar/IBMPlexSansArabic-Regular.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'IBM Plex Sans Arabic';src:url('fonts/ar/IBMPlexSansArabic-Medium.woff2') format('woff2');font-style:normal;font-weight:500;font-display:swap}
+@font-face{font-family:'IBM Plex Sans Arabic';src:url('fonts/ar/IBMPlexSansArabic-SemiBold.woff2') format('woff2');font-style:normal;font-weight:600;font-display:swap}
+@font-face{font-family:'IBM Plex Sans Arabic';src:url('fonts/ar/IBMPlexSansArabic-Bold.woff2') format('woff2');font-style:normal;font-weight:700;font-display:swap}
 @font-face{font-family:'Vazirmatn';src:url('fonts/fa/vazirmatn-variable.woff2') format('woff2');font-style:normal;font-weight:100 900;font-display:swap}
-@font-face{font-family:'Space Grotesk';src:url('fonts/en/space-grotesk-variable.woff2') format('woff2');font-style:normal;font-weight:300 700;font-display:swap}
-:root{--font-ar-display:'Alexandria','Noto Sans Arabic',sans-serif;--font-ar-body:'Noto Sans Arabic',sans-serif;--font-fa-display:'Vazirmatn','Noto Sans Arabic',sans-serif;--font-fa-body:'Vazirmatn','Noto Sans Arabic',sans-serif;--font-en-display:'Space Grotesk',system-ui,sans-serif;--font-en-body:'Space Grotesk',system-ui,sans-serif}
+@font-face{font-family:'Manrope';src:url('fonts/en/Manrope-Variable.woff2') format('woff2');font-style:normal;font-weight:200 800;font-display:swap}
+:root{--font-ar-display:'IBM Plex Sans Arabic',sans-serif;--font-ar-body:'IBM Plex Sans Arabic',sans-serif;--font-fa-display:'Vazirmatn',sans-serif;--font-fa-body:'Vazirmatn',sans-serif;--font-en-display:'Manrope',system-ui,sans-serif;--font-en-body:'Manrope',system-ui,sans-serif}
 html[lang='ar']{--font-display:var(--font-ar-display);--font-body:var(--font-ar-body)}
 html[lang='fa']{--font-display:var(--font-fa-display);--font-body:var(--font-fa-body)}
 html[lang='en']{--font-display:var(--font-en-display);--font-body:var(--font-en-body)}body,button,input,select,textarea{font-family:var(--font-body);font-synthesis:none}
 h1,h2,h3,.brand,.footer-brandline,.card>b,.proof b,.step b,.signal,.footer-col h3,.footer-domain{font-family:var(--font-display)}
-html[lang='ar'] h1,html[lang='ar'] h2,html[lang='ar'] h3{font-family:var(--font-ar-display);font-weight:700}
+html[lang='ar'] h1,html[lang='ar'] h2,html[lang='ar'] h3{font-family:var(--font-ar-display);font-weight:600}
 html[lang='fa'] h1,html[lang='fa'] h2,html[lang='fa'] h3{font-family:var(--font-fa-display);font-weight:700}
-html[lang='en'] h1,html[lang='en'] h2,html[lang='en'] h3{font-family:var(--font-en-display);font-weight:650}
+html[lang='en'] h1,html[lang='en'] h2,html[lang='en'] h3{font-family:var(--font-en-display);font-weight:600}
 html[lang='ar'] body{font-variation-settings:'wght' 400,'wdth' 100}
 html[lang='fa'] body{font-variation-settings:'wght' 400}
 html[lang='en'] body{font-variation-settings:'wght' 400}
